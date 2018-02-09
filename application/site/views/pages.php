@@ -1,0 +1,91 @@
+
+<?php include('_header.php'); 
+//print_r($about);
+$page_title = $about[0]['category'];
+
+switch ($page_title) {
+    case "About":
+        $title = "About Us";
+        $content = $about[0]['about-us'];
+        break;
+    case "Privacy":
+        $title = "Privacy Policy";
+        $content = $about[0]['our-policy'];
+        break;
+    case "Career":
+       $title = "Career";
+        $content = $about[0]['our-career'];
+        break;
+        case "Advers":
+       $title = "Advertisement";
+        $content = $about[0]['our-advers'];
+        break;
+        case "Disclaimer":
+       $title = "Disclaimer";
+        $content = $about[0]['our-disclaim'];
+        break;
+        case "Terms":
+       $title = "Service Terms";
+        $content = $about[0]['our-info'];
+        break;    
+    default:
+       $title = "BANGLATIMETV";
+}
+?>
+<!-- CONTENT -->
+<div class="content row">
+    <!-- INDEX PAGE -->
+    <div class="ambrogrid_10 single-post">
+       <!--  <div class="breadcrumbs">
+            <a href="<?php echo base_url();?>"><i class="fa fa-home"></i></a> &Gt; <a href="<?php echo base_url().'index.php/news/watch/'.$p_c_name[0]['category_slug'];?>"><?php echo $p_c_name[0]['service'];?></a>
+        </div> -->
+
+        <div class="single-title">
+            <h2><?php echo $title;?></h2>
+            <div class="clear"></div>
+            <!-- <div class="single-info">
+                <span class="single-author"><?php echo $post_data[0]['reporter_name'];?></span>,
+                <span class="single-date"><strong> প্রকাশিত : </strong><span><?php echo $convertedDATE = str_replace($engDATE, $bangDATE, $post_data[0]['date']);?></span></span>
+            </div> -->
+            <div class="clear"></div>
+        </div>
+        <div class="single-content">
+            <!-- <img src="<?php echo base_url();?>news/<?php echo $post_data[0]['news_image'];?>" alt=""> -->
+            <p><?php echo $content;?></p>
+        </div>
+        <!-- <div class="single-nav">
+            <div class="nav-left"><a href="<?php echo base_url();?>index.php/news/post/<?php echo $previous[0]['news_id'];?>" rel="prev">&lt;&lt; পূর্ববর্তী সংবাদ</a> </div>
+            <div class="nav-right"><a href="<?php echo base_url();?>index.php/news/post/<?php echo $next[0]['news_id'];?>" rel="next">পরবর্তী সংবাদ &gt;&gt;</a></div>
+        </div> -->
+        <!-- <div class="widget-magazine-line"><div class="widget-magmag-title">এই খবর শেয়ার করুন</div> </div> -->
+        <!-- <div class="post-share-box">
+            <ul>
+                <li class="facebook">
+                    <a title="Facebook" class="tooltip" href="http://www.facebook.com/sharer.php?u=http://banglatimetv.com<?php echo $_SERVER['PHP_SELF']; ?>" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"></a>
+                </li>
+
+                <li class="twitter">
+                    <a title="Twitter" class="tooltip" href="https://twitter.com/intent/tweet?original_referer=http://banglatimetv.com/&ref_src=twsrc%5Etfw&text=Check this out: http://banglatimetv.com<?php echo $_SERVER['PHP_SELF']; ?>&tw_p=tweetbutton&url=http://banglatimetv.com<?php echo $_SERVER['PHP_SELF']; ?>" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"></a>
+                </li>
+
+                <li class="google">
+                    <a title="Google +1" class="tooltip" href="http://google.com/bookmarks/mark?op=edit&amp;bkmk=http://banglatimestv.com<?php echo $_SERVER['PHP_SELF']; ?>&amp;title=NEWS+TITLE" onclick="window.open(this.href, 'mywin','left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"></a>
+                </li>
+            </ul>
+        </div> -->
+    </div>
+    <?php include('_sidebar.php'); ?>
+</div>
+
+
+
+<script>
+    $(".vid-thumbs > a").click(function () {
+        console.log($(this).attr('href'));
+        flowplayer().play($(this).attr('href'));
+        return false;
+    });
+</script>
+<!-- FOOTER WIDGET -->
+
+<?php include('_footer.php'); ?>
